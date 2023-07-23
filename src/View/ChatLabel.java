@@ -5,25 +5,48 @@ import java.awt.*;
 
 public class ChatLabel extends JLabel {
 
-    private static final int MAX_WIDTH = 400; // Maximum width for the label
+    private final int MAX_WIDTH = 400; // Maximum width for the label
+    private final int PADDING = 10;
 
     private Color labelColor;
     private final String message;
     private int x;
+    private int width;
+    private int height;
 
     public ChatLabel(String message, Boolean isUserMessage) {
         this.message = message;
-        setVerticalAlignment(JLabel.TOP);
+//        setVerticalAlignment(JLabel.TOP);
         setText("<html>" + wrapText(message) + "</html>"); // Wrap the text with HTML formatting
-        setVisible(true);
         labelColor = isUserMessage ? Color.RED : Color.WHITE;
-        setBackground(labelColor);
-        setForeground(Color.BLACK);
+//        setBackground(labelColor);
+//        setForeground(Color.BLACK);
         setFont(new Font("Comic Sans MS", Font.PLAIN, 18));
-        setOpaque(true);
+//        setOpaque(true);
 
         adjustSize(); // Call the method to adjust the label size based on the message length
         adjustX(isUserMessage);
+    }
+
+    @Override
+    protected void paintComponent(Graphics g) {
+        super.paintComponent(g);
+
+        // Draw the label background
+        g.setColor(labelColor);
+        g.fillRect(0, 0, width + PADDING, height + PADDING);
+
+        // Draw the text on the label
+        g.setColor(Color.BLACK);
+        g.setFont(getFont());
+        String wrappedText = wrapText(message);
+        String[] lines = wrappedText.split("<br>");
+        int lineHeight = getFontMetrics(getFont()).getHeight();
+        int y = 0;
+        for (String line : lines) {
+            g.drawString(line, 0, y + lineHeight-5);
+            y += lineHeight;
+        }
     }
 
     private String wrapText(String text) {
@@ -48,8 +71,9 @@ public class ChatLabel extends JLabel {
 
     private void adjustSize() {
         Dimension preferredSize = getPreferredSize();
-        int width = Math.min(MAX_WIDTH, preferredSize.width);
-        int height = getFontMetrics(getFont()).getHeight() * (preferredSize.width / width);
+        width = Math.min(MAX_WIDTH, preferredSize.width);
+
+        height = getFontMetrics(getFont()).getHeight() * (preferredSize.width / width);
 
         int paddingHeight = 10;
 
@@ -60,9 +84,9 @@ public class ChatLabel extends JLabel {
     private void adjustX(boolean isUserMessage) {
 
         if (isUserMessage) { // Should be on Right
-            x = 580 - getWidth();
+            x = 570 - getWidth();
         } else {
-            x = 20;
+            x = 30;
         }
 
     }

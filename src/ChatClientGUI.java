@@ -7,7 +7,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ChatClientGUI extends JFrame {
-    private JTextArea chatArea;
     private JTextField messageField;
     private PrintWriter writer;
     private JPanel chatPanel;

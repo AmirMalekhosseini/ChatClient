@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3f9253fc-e457-4647-bed2-ce7ee50d312a" name="Changes" comment="Working on Logic Send Message">
-      <change afterPath="$PROJECT_DIR$/src/View/MessengerApp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/View/ChatPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Background.png" beforeDir="false" afterPath="$PROJECT_DIR$/Background.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ChatClientGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ChatClientGUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/ChatScreenModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/ChatScreenModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/ChatChooseButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/ChatChooseButton.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/ChatLabel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/ChatLabel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/ChatScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/ChatScreen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/MainChatFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/MainChatFrame.java" afterDir="false" />
@@ -23,6 +26,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -41,7 +45,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.MessengerApp">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="ChatClientGUI" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ChatClientGUI" />
       <module name="ChatClient" />
@@ -71,9 +75,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.MessengerApp" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.ChatClientGUI" />
+        <item itemvalue="Application.MessengerApp" />
       </list>
     </recent_temporary>
   </component>
@@ -93,7 +97,14 @@
       <option name="project" value="LOCAL" />
       <updated>1690089259262</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Working on Logic Send Message">
+      <created>1690098090414</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1690098090414</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

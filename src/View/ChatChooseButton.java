@@ -1,6 +1,7 @@
 package View;
 
 import javax.swing.*;
+import java.awt.*;
 
 public class ChatChooseButton extends JButton {
 
@@ -14,10 +15,15 @@ public class ChatChooseButton extends JButton {
 
     public ChatChooseButton(ChatScreen chatScreen, String recipientUsername) {
 
-        this.setSize(width, height);
-
         this.chatScreen = chatScreen;
         this.recipientUsername = recipientUsername;
+
+        setSize(width, height);
+        setText(recipientUsername);
+        setFont(new Font("Comic Sans MS", Font.PLAIN, 18));
+        setForeground(Color.WHITE);
+        setBackground(Color.BLACK);
+
 
     }
 
