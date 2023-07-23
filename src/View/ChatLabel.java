@@ -16,13 +16,9 @@ public class ChatLabel extends JLabel {
 
     public ChatLabel(String message, Boolean isUserMessage) {
         this.message = message;
-//        setVerticalAlignment(JLabel.TOP);
         setText("<html>" + wrapText(message) + "</html>"); // Wrap the text with HTML formatting
         labelColor = isUserMessage ? Color.RED : Color.WHITE;
-//        setBackground(labelColor);
-//        setForeground(Color.BLACK);
         setFont(new Font("Comic Sans MS", Font.PLAIN, 18));
-//        setOpaque(true);
 
         adjustSize(); // Call the method to adjust the label size based on the message length
         adjustX(isUserMessage);

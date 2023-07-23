@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3f9253fc-e457-4647-bed2-ce7ee50d312a" name="Changes" comment="Working on Logic Send Message">
-      <change afterPath="$PROJECT_DIR$/src/View/ChatPanel.java" afterDir="false" />
+    <list default="true" id="3f9253fc-e457-4647-bed2-ce7ee50d312a" name="Changes" comment="Complete Chat Graphic">
+      <change afterPath="$PROJECT_DIR$/src/Controller/ButtonCreator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/MessageCommunication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Model/ChatFrameModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Model/Client.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Model/Message.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Model/MyProject.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/View/ChatScrollPane.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Background.png" beforeDir="false" afterPath="$PROJECT_DIR$/Background.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ChatClientGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ChatClientGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/ChatScreenModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/ChatScreenModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/ChatChooseButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/ChatChooseButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/ChatChooseScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/ChatChoosePanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/ChatLabel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/ChatLabel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/ChatScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/ChatScreen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/MainChatFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/MainChatFrame.java" afterDir="false" />
@@ -53,7 +59,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="Main" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="ChatClient" />
       <method v="2">
@@ -73,6 +79,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.ChatClientGUI" />
+      <item itemvalue="Application.Main" />
+      <item itemvalue="Application.MessengerApp" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
@@ -104,7 +115,14 @@
       <option name="project" value="LOCAL" />
       <updated>1690098090414</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Complete Chat Graphic">
+      <created>1690114208143</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1690114208143</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -120,6 +138,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Working on Logic Send Message" />
-    <option name="LAST_COMMIT_MESSAGE" value="Working on Logic Send Message" />
+    <MESSAGE value="Complete Chat Graphic" />
+    <option name="LAST_COMMIT_MESSAGE" value="Complete Chat Graphic" />
   </component>
 </project>

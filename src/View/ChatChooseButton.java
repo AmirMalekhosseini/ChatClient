@@ -7,24 +7,20 @@ public class ChatChooseButton extends JButton {
 
     protected ChatScreen chatScreen;
     private final String recipientUsername;
-    private int x;
-    private int y;
     private final int height = 100;
     private final int width = 200;
     private int indexInList;
 
     public ChatChooseButton(ChatScreen chatScreen, String recipientUsername) {
-
         this.chatScreen = chatScreen;
         this.recipientUsername = recipientUsername;
 
-        setSize(width, height);
+        setPreferredSize(new Dimension(width, height));
+        setMaximumSize(new Dimension(Short.MAX_VALUE, height)); // Set maximum width to expand horizontally
         setText(recipientUsername);
         setFont(new Font("Comic Sans MS", Font.PLAIN, 18));
         setForeground(Color.WHITE);
-        setBackground(Color.BLACK);
-
-
+        setBackground(Color.DARK_GRAY);
     }
 
     public ChatScreen getChatScreen() {
@@ -33,24 +29,6 @@ public class ChatChooseButton extends JButton {
 
     public void setChatScreen(ChatScreen chatScreen) {
         this.chatScreen = chatScreen;
-    }
-
-    @Override
-    public int getX() {
-        return x;
-    }
-
-    public void setX(int x) {
-        this.x = x;
-    }
-
-    @Override
-    public int getY() {
-        return y;
-    }
-
-    public void setY(int y) {
-        this.y = y;
     }
 
     public String getRecipientUsername() {

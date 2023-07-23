@@ -1,20 +1,17 @@
 package View;
 
 import Model.ChatScreenModel;
-
 import javax.swing.*;
 import java.awt.*;
-import java.util.ArrayList;
 
 public class ChatScreen extends JPanel {
 
     private ChatScreenModel model;
     protected JTextField chatArea;
-    private boolean test = false;
 
-    public ChatScreen(ArrayList<String> usernames, JTextField chatArea) {
+    public ChatScreen(String myUsername,String otherUsername, JTextField chatArea) {
         this.chatArea = chatArea;
-        model = new ChatScreenModel(usernames);
+        model = new ChatScreenModel(myUsername,otherUsername);
         init();
     }
 
@@ -26,34 +23,29 @@ public class ChatScreen extends JPanel {
 
     }
 
-    public void addMessage(String message) {
+    public void addUserMessage(String message) {
 
         // Add vertical padding
         add(Box.createVerticalStrut(10));
-        ChatLabel messageLabel = new ChatLabel(message, test);
-        test = !test;
+        ChatLabel messageLabel = new ChatLabel(message, true);
         add(messageLabel);
         revalidate();
         scrollDown(); // Scroll to the bottom to show the latest message
         
     }
 
-    protected void sendMessage() {
-        String messageText = chatArea.getText().trim();
-        if (!messageText.isEmpty()) {
+    public void addOtherMessage(String message) {
 
-            // Scroll down to show the latest message
-            scrollDown();
+        // Add vertical padding
+        add(Box.createVerticalStrut(10));
+        ChatLabel messageLabel = new ChatLabel(message, false);
+        add(messageLabel);
+        revalidate();
+        scrollDown(); // Scroll to the bottom to show the latest message
 
-            // Clear the chatArea after sending the message
-            chatArea.setText("");
-
-            addMessage(messageText);
-        }
     }
 
-
-    private void scrollDown() {
+    public void scrollDown() {
         SwingUtilities.invokeLater(() -> {
             Container parent = getParent();
             while (parent != null && !(parent instanceof JScrollPane)) {
