@@ -32,6 +32,7 @@ public class ChatScreen extends JLayeredPane {
 
         chatArea = new JTextArea();
         chatArea.setVisible(true);
+        chatArea.setLineWrap(true);
         chatArea.setBounds(0, imageHeight, 550, 50);
         chatArea.setForeground(Color.WHITE);
         chatArea.setBackground(Color.GRAY);
@@ -50,8 +51,10 @@ public class ChatScreen extends JLayeredPane {
 
     }
 
-    public void addMessage(JLabel messageLabel) {
+    public void addMessage(String message) {
 
+        ChatLabel messageLabel = new ChatLabel(message, false);
+        messageLabel.setLocation(messageLabel.getX(), model.getCurrentY());
         add(messageLabel, Integer.valueOf(2));
         revalidate();
         model.addMessage(messageLabel);
@@ -62,13 +65,6 @@ public class ChatScreen extends JLayeredPane {
     private void sendMessage() {
         String messageText = chatArea.getText().trim();
         if (!messageText.isEmpty()) {
-            // Create a new ChatLabel with the entered message and the appropriate position
-            ChatLabel messageLabel = new ChatLabel(messageText, true);
-            messageLabel.setBounds(20, model.getCurrentY(), 300, messageLabel.getPreferredSize().height); // Set the width to 300, and height based on the wrapped text
-
-            add(messageLabel); // Add the ChatLabel to the panel
-
-            model.setCurrentY(model.getCurrentY() + messageLabel.getPreferredSize().height + 5); // Update the currentY position
 
             // Scroll down to show the latest message
             scrollDown();
@@ -76,7 +72,7 @@ public class ChatScreen extends JLayeredPane {
             // Clear the chatArea after sending the message
             chatArea.setText("");
 
-            addMessage(messageLabel);
+            addMessage(messageText);
         }
     }
 

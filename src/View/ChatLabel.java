@@ -5,21 +5,25 @@ import java.awt.*;
 
 public class ChatLabel extends JLabel {
 
-    private static final int MAX_WIDTH = 300; // Maximum width for the label
+    private static final int MAX_WIDTH = 400; // Maximum width for the label
 
     private Color labelColor;
     private final String message;
+    private int x;
 
     public ChatLabel(String message, Boolean isUserMessage) {
         this.message = message;
+        setVerticalAlignment(JLabel.TOP);
         setText("<html>" + wrapText(message) + "</html>"); // Wrap the text with HTML formatting
         setVisible(true);
-        setBackground(isUserMessage ? Color.RED : Color.BLACK);
-        setForeground(Color.WHITE);
+        labelColor = isUserMessage ? Color.RED : Color.WHITE;
+        setBackground(labelColor);
+        setForeground(Color.BLACK);
         setFont(new Font("Comic Sans MS", Font.PLAIN, 18));
         setOpaque(true);
 
         adjustSize(); // Call the method to adjust the label size based on the message length
+        adjustX(isUserMessage);
     }
 
     private String wrapText(String text) {
@@ -35,6 +39,7 @@ public class ChatLabel extends JLabel {
             } else {
                 wrappedText.append("<br>").append(word).append(" ");
                 currentWidth = wordWidth + getFontMetrics(getFont()).charWidth(' ');
+
             }
         }
 
@@ -43,8 +48,28 @@ public class ChatLabel extends JLabel {
 
     private void adjustSize() {
         Dimension preferredSize = getPreferredSize();
-        int width = Math.min(MAX_WIDTH, preferredSize.width); // Limit width to MAX_WIDTH
-        setSize(width, preferredSize.height);
+        int width = Math.min(MAX_WIDTH, preferredSize.width);
+        int height = getFontMetrics(getFont()).getHeight() * (preferredSize.width / width);
+
+        int paddingHeight = 10;
+
+        // Set the label size based on the calculated width and height
+        setSize(width, height + paddingHeight);
+    }
+
+    private void adjustX(boolean isUserMessage) {
+
+        if (isUserMessage) { // Should be on Right
+            x = 580 - getWidth();
+        } else {
+            x = 20;
+        }
+
+    }
+
+    @Override
+    public int getX() {
+        return x;
     }
 
     @Override

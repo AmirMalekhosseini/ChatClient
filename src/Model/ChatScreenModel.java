@@ -8,7 +8,7 @@ import java.util.ArrayList;
 public class ChatScreenModel {
 
 
-    private final int MESSAGE_PADDING = 10;
+    private final int MESSAGE_PADDING = 5;
     private final int SCREEN_WIDTH = 600;
     private int currentY;
     protected ArrayList<String> chatUsernames = new ArrayList<>();

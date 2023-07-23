@@ -39,10 +39,10 @@ public class MainChatFrame extends JFrame {
         scrollPane = new JScrollPane(chatScreen);
         scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
         scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
-        scrollPane.setBounds(200, 0, 620, 730); // Set the bounds of the scroll pane
+        scrollPane.setBounds(200, 0, 620, 800); // Set the bounds of the scroll pane
         scrollPane.setBackground(Color.BLACK);
 
-        panel.add(chatScreen);
+//        panel.add(chatScreen);
         panel.add(scrollPane);
         panel.add(chooseScreen);
         setContentPane(panel);
